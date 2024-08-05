@@ -1,0 +1,10 @@
+python-dotenv
+streamlit==1.37.0
+requests
+sqlalchemy
+langchain_community
+langchain_aws
+botocore
+boto3
+langchain
+PyAthena
