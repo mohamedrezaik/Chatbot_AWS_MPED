@@ -6,7 +6,13 @@ import uuid
 from langchain_core.messages import AIMessage, HumanMessage
 from invoke_agent import SqlAgent
 
-
+st.set_page_config(
+    page_title="Chat With MPED",
+    page_icon=":speech_balloon:",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+st.title("Chat With MPED")
 
 def generate_new_session_id():
     return str(uuid.uuid4())
@@ -26,8 +32,8 @@ def fetch_data(question):
         print(f"Failed to invoke agent: {e}")
         return "Hi! Could you please repeat your question or provide more details? Thanks!"
 
-st.set_page_config(page_title="ChatBot with DATABASE", page_icon=":speech_balloon:")
-st.title("ChatBot with DATABASE")
+# st.set_page_config(page_title="ChatBot with DATABASE", page_icon=":speech_balloon:")
+
 
 def local_css(file_name):
     with open(file_name) as f:
@@ -61,8 +67,8 @@ with st.sidebar:
     </style>
     """
     st.markdown(custom_subheader_css, unsafe_allow_html=True)
-    st.markdown('<h3 class="custom-subheader">Settings</h3>', unsafe_allow_html=True)
-    st.write("This is a chat application to ask it about The Ministry of Planning and Economic Development. Connect to your database")    
+    st.markdown('<h3 class="custom-subheader">Overview</h3>', unsafe_allow_html=True)
+    st.write("""<p style="text-align: left;">This is an AI ChatBot to ask it about National Accounts Data of Egypt from The Ministry of Planning and Economic Development.</p>""", unsafe_allow_html=True)    
     st.sidebar.markdown('</div>', unsafe_allow_html=True)
     
     custom_button_css = """

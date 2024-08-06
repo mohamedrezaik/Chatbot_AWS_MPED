@@ -34,7 +34,7 @@ class SqlAgent:
         athena_db = 'athena_db' #from user defined params
         s3stagingathena = 's3://athena-destination-store-mped/ ' 
         athena_wkgrp = 'primary' 
-        athena_connection_string = f"awsathena+rest://@{athena_url}:{athena_port}/{athena_db}?s3_staging_dir={s3stagingathena}/&work_group={athena_wkgrp}"
+        athena_connection_string = f"awsathena+rest://{aws_access_key_id}:{aws_secret_access_key}@{athena_url}:{athena_port}/{athena_db}?s3_staging_dir={s3stagingathena}/&work_group={athena_wkgrp}"
         athena_engine = create_engine(athena_connection_string, echo=True, )
         db = SQLDatabase(athena_engine)
 
@@ -111,7 +111,7 @@ class SqlAgent:
             Observation: The result of the action
             ... (this Thought/Action/Action Input/Observation can repeat N times)
             Thought: I now know the final answer
-            Final Answer: The final answer to the original input question should contain only the information present in the database, without any additional details. It should avoid using technical terms like database, SQL, table, or query. Numbers from the database should not be rounded. The answer should be organized and easy to read, formatted in HTML, and should not use headers greater than h4.
+            Final Answer: The final answer to the original input question should contain only the information present in the database, without any additional details. It should avoid using technical terms like database, SQL, table, or query. Numbers from the database should not be rounded. The answer should be organized and easy to read, formatted in HTML, and should not use headers greater than h4. Use this tag <p style="text-align: left;"> to align each paragraph.
                         
             Question: {input}
 
