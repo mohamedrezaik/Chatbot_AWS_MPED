@@ -111,7 +111,7 @@ class SqlAgent:
             Observation: The result of the action
             ... (this Thought/Action/Action Input/Observation can repeat N times)
             Thought: I now know the final answer
-            Final Answer: The final answer to the original input question should contain only the information present in the database, without any additional details. It should avoid using technical terms like database, SQL, table, or query. Numbers from the database should not be rounded. The answer should be organized and easy to read, formatted in HTML, and should not use headers greater than h4. Use this tag <p style="text-align: left;"> to align each paragraph.
+            Final Answer: The final answer to the original input question should contain only the information present in the database, without any additional details. It should avoid using technical terms like database, SQL, table, or query. Numbers from the database should not be rounded. The answer should be organized and easy to read, formatted in HTML, and should not use headers greater than h4.
                         
             Question: {input}
 
